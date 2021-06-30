@@ -1,1 +1,61 @@
+html{
+    height: 100%;
+    
+}
+body{ 
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Quattrocento Sans', sans-serif;
+}
 
+a{
+    text-decoration: unset;
+}
+
+#map{
+    height: 100%;
+    padding: 0;
+}
+
+.ol-zoom{
+    width: 25px;
+    left: unset;
+    right: .5em;
+}
+
+.ol-zoom.ol-control{
+    padding: 0;
+    background: none;
+}
+
+.ol-zoom button{
+    width: 25px;
+    height: 25px;
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: rgb(80, 80, 80);
+}
+
+.ol-zoom button:hover{
+    background-color: rgb(120, 120, 120);
+}
+
+.ol-zoom-in{
+    border-radius: 7px 7px 0 0 !important;
+}
+
+.ol-zoom-out{
+    border-radius: 0px 0px 7px 7px !important;
+}
+
+.ol-attribution.ol-control{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ol-attribution ul{
+    font-size: 12px;
+}
