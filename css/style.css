@@ -14,7 +14,7 @@ a{
 }
 
 #map{
-    height: 100%;
+    height: calc(100% - 58px);
     padding: 0;
 }
 

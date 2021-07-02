@@ -15,5 +15,10 @@
         pg_close($db_connection);
         return $status;
     }
-
+    
+    function checkLogin($loggedin){
+        if (!isset($loggedin)){
+            header("location: login.php");
+        }
+    }
 ?>

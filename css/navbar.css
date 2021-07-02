@@ -1,0 +1,49 @@
+.navbar-expand-lg{
+    height: 58px;
+    background-color: coral;
+}
+
+h1{
+    margin: auto 0;
+    color: white;
+    font-weight: bold;
+}
+
+#options{
+    width: 120px;
+    background-color: #00A59A;
+    border: 1px solid #00A59A;
+}
+
+#options:active {
+  /*outline: blue solid 5px;*/
+  box-shadow: 0 0 0 5px #54858B;
+}
+#btnOptions{
+    display: inline-block;
+    width: 70px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    color: white;
+    outline:none;
+    margin: 0;
+    
+}
+
+
+#btnOptionsSVG {
+    /*display: inline-block;*/
+    /*margin-left: 2em;*/
+    /*z-index: 1000;*/
+    /*width: 20px;
+    height: 20px;*/
+    color: white;
+  display: inline-block;
+  margin: 0;
+}
+  /**/
+

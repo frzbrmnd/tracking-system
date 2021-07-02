@@ -1,3 +1,7 @@
+<?php
+    // Start the session
+    session_start();
+?>
 <?php require_once("functions.php"); ?>  
 <?php   
     $errorMessage;
@@ -17,6 +21,9 @@
         }
         if(empty($errorMessage)){
             if (checkUsernamePassword($username, $password, $userType)){
+                $_SESSION['loggedin'] = true;
+                $_SESSION['username'] = $username;
+                $_SESSION['title'] = ($userType == 'admin' ? "Tracking Food Trucks | Admins panel" : "Tracking Food Trucks | Drivers panel");;
                 header("location: {$userType}.php");
             }else{
                 $errorMessage .= "username or Password is incorrect";
