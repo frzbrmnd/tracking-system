@@ -1,0 +1,18 @@
+#track {
+   
+    
+    
+    display: none;
+    
+}
+
+#trackLable{
+    
+    position: absolute;
+    top: 200px;
+    left: 20px;
+}
+/*
+#track:checked {
+    opacity: 1;
+}*/

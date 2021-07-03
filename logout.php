@@ -4,5 +4,4 @@
     unset($_SESSION["loggedin"]);
     unset($_SESSION["title"]);
     header("Location: login.php");
-
 ?>
