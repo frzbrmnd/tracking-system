@@ -4,7 +4,8 @@
 <?php require_once("header.php"); ?> 
 
 
-<label id="trackLable" class="btn btn-success"><input id="track" type="checkbox"/><span id="test">start tracking</span></label>
+<label id="trackLabel" class="btn btn-success"><input id="track" type="checkbox"/><span id="trackLabelText">start tracking</span></label>
+
 <!--<p>
     position accuracy : <code id="accuracy"></code>&nbsp;&nbsp;
     altitude : <code id="altitude"></code>&nbsp;&nbsp;

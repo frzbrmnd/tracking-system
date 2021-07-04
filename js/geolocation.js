@@ -7,41 +7,57 @@ var geolocation = new ol.Geolocation({
 });
 
 var toggleTracking = document.getElementById("track");
-/*function el(id) {
-    return document.getElementById(id);
-}*/
 
 toggleTracking.addEventListener('change', function () {
     geolocation.setTracking(this.checked);
     if(this.checked){
         driverLocationSource.addFeature(positionFeature);
-        document.getElementById("test").innerText = "Stop Tracking";
-                                 
+        document.getElementById("trackLabelText").innerText = "Stop Tracking";
+        $.ajax({
+            type : "POST",
+            url : "createDriversLocationsTable.php",
+            error: function(xhr) { 
+                var errorMessage = xhr.status + ': ' + xhr.statusText
+                alert('Error - ' + errorMessage);            
+            }
+        });  
+        setInterval(function(){
+                var date = new Date();
+                var timestamp = date.getTime();
+                var coordinates = geolocation.getPosition();    
+                $.ajax({
+                    type : "POST",
+                    url : "insertLocationsIntoDB.php",
+                    data: {
+                        longitude: coordinates[0],
+                        latitude: coordinates[1],
+                        timestamp: timestamp,
+                    },
+                    dataType: "text",
+                    error: function(xhr) { 
+                        var errorMessage = xhr.status + ': ' + xhr.statusText
+                        alert('Error - ' + errorMessage);            
+                    }
+                }); 
+            }, 
+            1000    
+        );
     }else{
         driverLocationSource.clear();
-        document.getElementById("test").innerText = "Start Tracking";
+        document.getElementById("trackLabelText").innerText = "Start Tracking";
     }
 });
-
-// update the HTML page when the position changes.
-/*geolocation.on('change', function () {
-    el('accuracy').innerText = geolocation.getAccuracy() + ' [m]';
-    el('altitude').innerText = geolocation.getAltitude() + ' [m]';
-    el('altitudeAccuracy').innerText = geolocation.getAltitudeAccuracy() + ' [m]';
-    el('heading').innerText = geolocation.getHeading() + ' [rad]';
-    el('speed').innerText = geolocation.getSpeed() + ' [m/s]';
-});*/
 
 // handle geolocation error.
 geolocation.on('error', function (error) {
     toggleTracking.checked = false;
-    document.getElementById("test").innerText = "Start Tracking";
+    document.getElementById("trackLabelText").innerText = "Start Tracking";
     driverLocationSource.clear();
     geolocation.setTracking(false);
     if(error.message == "User denied Geolocation"){
         alert("Please turn on your location");
     }else{
-        alert("oppps! Service is unavailable right now.");
+        alert("oppps! Service is unavailable right now.");  
     }
 });
 
@@ -64,8 +80,6 @@ positionFeature.setStyle(
 geolocation.on('change:position', function () {
     var coordinates = geolocation.getPosition();
     positionFeature.setGeometry(coordinates ? new ol.geom.Point(coordinates) : null);
-    
-    //send locations to database using 
 });
 
 var driverLocationSource = new ol.source.Vector();

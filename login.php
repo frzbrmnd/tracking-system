@@ -23,7 +23,8 @@
             if (checkUsernamePassword($username, $password, $userType)){
                 $_SESSION['loggedin'] = true;
                 $_SESSION['username'] = $username;
-                $_SESSION['title'] = ($userType == 'admin' ? "Tracking Food Trucks | Admins panel" : "Tracking Food Trucks | Drivers panel");;
+                $_SESSION['title'] = ($userType == 'admin' ? "Tracking Food Trucks | Admins panel" : "Tracking Food Trucks | Drivers panel");
+                $_SESSION['date'] = date("Y_m_d");
                 header("location: {$userType}.php");
             }else{
                 $errorMessage .= "username or Password is incorrect";

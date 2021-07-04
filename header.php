@@ -7,7 +7,7 @@
         <script src="./js/ol.js"></script>
         <link rel="shortcut icon" href="#"> <!--for netbeans favicon error-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <link rel="stylesheet" href="./css/ol.css" type="text/css">
         <link rel="stylesheet" href="./css/mapStyle.css">
         <link rel="stylesheet" href="./css/navbar.css" type="text/css">

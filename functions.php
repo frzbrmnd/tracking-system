@@ -21,4 +21,28 @@
             header("location: login.php");
         }
     }
+    
+    function createTableOfLocations($username, $date){
+        $db_connection = pg_connect("host=localhost dbname=Tracking_System_DB user=postgres password=faraz@816#postgres") or die('connection failed' . pg_last_error());
+        $query = "CREATE TABLE IF NOT EXISTS {$username}_{$date} ( ";
+        $query .= "id SERIAL PRIMARY KEY, ";
+        $query .= "timestamp BIGINT NOT NULL, ";
+        $query .= "coordinate POINT NOT NULL );";
+        $result = pg_query($query);
+        pg_free_result($result);
+        pg_close($db_connection);
+    }
+     
+    function InsertCoordinateIntoTable($tableName, $timestamp, $longitude, $latitude){
+        $db_connection = pg_connect("host=localhost dbname=Tracking_System_DB user=postgres password=faraz@816#postgres") or die('connection failed' . pg_last_error());
+        $query = "INSERT INTO {$tableName}(timestamp, coordinate) ";
+        $query .= "VALUES ({$timestamp}, POINT({$longitude}, {$latitude}))";
+        $result = pg_query($query);
+        pg_free_result($result);
+        pg_close($db_connection);
+    }
+    
+    function retriveDriversLocation(){
+        $db_connection = pg_connect("host=localhost dbname=Tracking_System_DB user=postgres password=faraz@816#postgres") or die('connection failed' . pg_last_error());
+    }
 ?>
