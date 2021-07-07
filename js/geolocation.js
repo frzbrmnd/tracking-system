@@ -10,12 +10,13 @@ var toggleTracking = document.getElementById("track");
 
 toggleTracking.addEventListener('change', function () {
     geolocation.setTracking(this.checked);
+    var status = this.checked;
     if(this.checked){
         driverLocationSource.addFeature(positionFeature);
         document.getElementById("trackLabelText").innerText = "Stop Tracking";
         $.ajax({
             type : "POST",
-            url : "createDriversLocationsTable.php",
+            url : "createTableOfDriversLocation.php",
             error: function(xhr) { 
                 var errorMessage = xhr.status + ': ' + xhr.statusText
                 alert('Error - ' + errorMessage);            
@@ -46,6 +47,18 @@ toggleTracking.addEventListener('change', function () {
         driverLocationSource.clear();
         document.getElementById("trackLabelText").innerText = "Start Tracking";
     }
+    $.ajax({
+        type : "POST",
+        url : "toggleDriversStatus.php",
+        data: {
+            status: status,
+        },
+        dataType: "text",
+        error: function(xhr) { 
+            var errorMessage = xhr.status + ': ' + xhr.statusText
+            alert('Error - ' + errorMessage);            
+        }
+    }); 
 });
 
 // handle geolocation error.

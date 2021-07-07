@@ -6,4 +6,3 @@
     $timestamp = $_POST['timestamp'];
     $tableName = $_SESSION['username'] . "_" . $_SESSION['date'];
     InsertCoordinateIntoTable($tableName, $timestamp, $longitude, $latitude);    
-?>
