@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="./css/mapStyle.css">
         <link rel="stylesheet" href="./css/navbar.css" type="text/css">
         <link rel="stylesheet" href="./css/driver.css">
+        <link rel="stylesheet" href="./css/admin.css">
     </head>
     <body>   
         <nav class="navbar navbar-expand-lg">

@@ -1,0 +1,306 @@
+#toolbarContainer{
+    height: calc(100% - 58px);
+    position: absolute;
+    left: 0;
+    top: 58px;
+}
+
+#toolbar{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: auto;
+    /*margin: 8px 0 0px 20px;*/
+}
+
+@media only screen and (max-width: 600px) {
+    .forSmallScreens{
+        width: 80%;
+    }
+}
+
+#toggleToolbarButton{
+    width: 20px;
+    height: 45px;
+    position: absolute;
+    right: 0;
+    top: 12%;
+    background: blue;
+    margin-right: -20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(80, 80, 80);
+    border-radius: 0 7px 7px 0;
+}
+
+.closeToolbarIcon{
+    width: 0; 
+    height: 0; 
+    border-top: 0.4em solid transparent;
+    border-bottom: 0.4em solid transparent; 
+    border-right: 0.4em solid white; 
+}
+
+.openToolbarIcon{
+    width: 0; 
+    height: 0; 
+    border-top: 0.4em solid transparent;
+    border-bottom: 0.4em solid transparent; 
+    border-left: 0.4em solid white; 
+}
+
+#drivers{
+    margin: 10px 10px 0px 10px;
+    padding: 0px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0px 0px 10px 0px #888888;
+    max-height: 50%;
+    overflow-y: auto; 
+}
+
+#drivers::-webkit-scrollbar {
+    width: 4px;
+}
+
+#drivers::-webkit-scrollbar-track {
+    background-color: rgb(245, 245, 245);
+    border-radius: 0 5px 5px 0;
+}
+
+#drivers::-webkit-scrollbar-thumb {
+    background-color: rgb(135, 135, 135);
+}
+
+#newDriver{
+    margin: 0;
+    padding: 7px;
+    border: 0;
+    border-bottom: 1px solid black;
+}
+
+#newDriver p{
+    margin: auto 0;
+    padding: 0;
+}
+
+#newDriver button{
+    width: 35px;
+    height: 35px;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#driversList{
+    margin: 0;
+    padding: 7px 0; 
+}
+
+.driversItem{
+    margin: 0;
+    padding: 6px 15px;
+}
+
+.driversItem div{
+    padding: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.activeDriver{
+    background-color: #4BF70C;
+}
+
+.inactiveDriver{
+    background-color: #F70000;
+}
+
+.deleteButton{
+    background: none;
+    border: none;
+    color: red;
+    padding: 0;
+    margin: 0;
+}
+
+.showOnMapButton, .driverInformationButton{
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.driversItem span{
+    padding: 0;
+}
+
+.driversItem:hover{
+    background-color: rgb(240, 240, 240);
+}
+
+.driversInformation{
+    list-style-type: none;
+}
+
+#popup{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: rgb(245, 245, 245);
+    z-index: 2;
+    display: none;
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 576px) {
+  #popup {
+    width: 95%;
+  }
+}
+
+#popup .row{
+    margin: 0;
+    padding: 10px 0;
+}
+
+#popup p{
+    margin: 0;
+}
+
+#popup img{
+    width: 20px;
+    height: 20px;
+}
+
+#popupHeader{
+    border-bottom: 2px dashed grey;
+}
+
+#popupHeader div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#popup form{
+    margin-top: 0px;
+    padding: 10px 15px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+#disableDiv {
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  background-color: black;
+  z-index: 1;
+  display: none;
+}
+
+
+
+input::-webkit-calendar-picker-indicator{
+    /*-webkit-user-modify: read-only !important;*/
+    cursor: pointer;
+    /*display: none;*/
+    margin: auto;
+   
+}
+
+.datePickerButton{
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    width: 26px;
+    height: 26px;
+}
+
+input::-webkit-datetime-edit,
+input::-webkit-datetime-edit-text,
+input::-webkit-datetime-edit-fields-wrapper, 
+input::-webkit-datetime-edit-day-field,
+input::-webkit-datetime-edit-month-field,
+input::-webkit-datetime-edit-year-field{
+    display: none;
+}
+
+.highlighted{
+    background-color: rgb(180, 180, 180) !important;
+}
+
+
+.ol-popup {
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #cccccc;
+    bottom: 12px;
+    left: -50px;
+    min-width: 280px;
+}
+
+      .ol-popup:after, .ol-popup:before {
+        top: 100%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+      }
+      .ol-popup:after {
+        border-top-color: white;
+        border-width: 10px;
+        left: 48px;
+        margin-left: -10px;
+      }
+      .ol-popup:before {
+        border-top-color: #cccccc;
+        border-width: 11px;
+        left: 48px;
+        margin-left: -11px;
+      }
+      .ol-popup-closer {
+        text-decoration: none;
+        position: absolute;
+        top: 2px;
+        right: 8px;
+      }
+      .ol-popup-closer:after {
+        content: "✖";
+      }

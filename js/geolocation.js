@@ -102,3 +102,9 @@ var driverLocationLayer = new ol.layer.Vector({
 });
 
 
+/*window.addEventListener('beforeunload', function (e) {
+    e.preventDefault();
+    e.returnValue = '';
+});*/
+
+window.onunload=function(){alert("sdasd")};

@@ -4,8 +4,8 @@ var osm = new ol.layer.Tile({
 
 var view = new ol.View({
     projection: 'EPSG:4326',
-    center: [51.391098, 35.700927],
-    zoom: 12,
+    center: [51.6630268, 32.6258192],
+    zoom: 20,
 });
 
 //disabe rotation

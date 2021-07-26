@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <?php require_once("functions.php"); ?> 
-<?php checkLogin($_SESSION['loggedin']); ?>
+<?php checkLogin($_SESSION['loggedin'], $_SESSION['userType'], "driver"); ?>
 <?php require_once("header.php"); ?> 
 
 
